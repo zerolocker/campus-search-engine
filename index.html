@@ -63,18 +63,18 @@
     </div>    
         
     <div id="how_content" class="step" data-x="46000" data-y="31000" data-z="0" data-rotate="0" data-scale="20">
-        <p class="tittle">GUI （记得换成网站图片）<i class="icon-group"></i></p>
-        <p class="content-view" style="margin-left:-25%;"><img src="img/GUIscreenshot.jpg" /></p>
+        <p class="tittle">GUI <i class="icon-picture"></i></p>
+        <p class="content-view" style="margin-left:-5%;"><img src="img/GUIscreenshot.jpg" /></p>
     </div>
 
     <div id="first" class="step" data-x="65000" data-y="41000" data-z="30000" data-rotate="10" data-scale="10"
 	style="width:900px">
         <p class="tittle"><i class="icon-bar-chart"></i>Statistics</p>
         <p class="content-view font2">Whole www.szu.edu.cn crawling</p>
-		<p>公文通: 749MB, aprox. 70000 articles</p>
-		<p>All the rest: 219MB, 17024 articles</p>
+		<p>Board: 15, 000, 000+ Chinese words, aprox. 70000 articles</p>
+		<p>All the rest: 5, 000, 000+ Chinese words, 17024 articles</p>
 		<p>Solr's index size:325MB</p>
-		<p>Total time: only 3 hours</p>
+		<p>Total time: 25 hours (no optimiz.) only 3 hours (after optimiz.) </p>
     </div>     
 
     <div id="second" class="step" data-x="75000" data-y="41000" data-z="80000" data-rotate="-10" data-scale="20">
@@ -84,20 +84,22 @@
 
     <div id="third" class="step" data-x="85000" data-y="41000" data-z="20000" data-rotate="10" data-scale="10">
         <p class="tittle">Email Reminder <i class="icon-envelope"></i></p>
-        <p class="content-view">We record user's click history/contexts, and exploit them to <b class="font" style="font-size:60px;">recommend</b> emerging webpages (e.g. new 公文通 announcements) that users might be interested in.</p>
+        <p class="content-view">We record users' behaviors, including historical clicks and corrseponding contexts, which help us exploit users' interests. Then <b class="font" style="font-size:60px;">recommend</b> emerging webpages (e.g. new board announcements & news) to those users by email.</p>
     </div> 
 
     <div id="fourth" class="step" style="width:1100px;" data-x="95000" data-y="41000" data-z="70000" data-rotate="-10" data-scale="20">
-        <p class="tittle">Keyword Highlighting <i class="icon-lightbulb"></i></p>
-        <p class="content-view">Originally, the content in Solr's returning results always start from the beginning of the content of the picked-up webpages. However, a good search engine should show users the content of the picked-up webpages which is near to the searched keyword. </p><p>We implemented this, and highlight the queried keyword in the result.</p>
+        <p class="tittle"> Two Modules Available <i class="icon-puzzle-piece"></i></p>
+        <p>1. <em>CSE Digest</em>: top news from your feed</p>
+        <p>2. <em>Shocking News</em>: first hand announcement that you urge to know</p>
     </div>
 
-    <div id="five" class="step" data-x="105000" data-y="41000" data-z="10000" data-rotate="10" data-scale="10">
+<!--     <div id="five" class="step" data-x="105000" data-y="41000" data-z="10000" data-rotate="10" data-scale="10">
         <p class="tittle">更多功能<i class="icon-puzzle-piece"></i></p>
-        <p class="content-view">这里待添加我没有上面提到的功能</p>
-    </div>
+        <p class="content-view">这里待添加我没有上面提到的功能，如果没有，就删掉这一个DIV</p>
+    </div> -->
 
-    <!--------------------- TECHNOLOGIES (changed to "Challenges") ------------------------------->
+    <!-- TECHNOLOGIES (changed to "Challenges") -->
+
 
     <div id="tech" class="step" data-x="-10000" data-y="80000" data-z="0" data-rotate="0" data-scale="300">
         <p class="font font-x2"><span class="salmon">{</span>#<span class="salmon">}</span><span class="font title">Challenges</span></p>
@@ -111,9 +113,9 @@
 		</p>
     </div>
     <div id="tech_content2" class="step" data-x="-800" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
-        <p class="text-center" style="font-size:60px;">Problems we meet (Nutch)</p>
-        <p class="content-view font">Detect and Add New Webpages<br/>
-		We use a scheduled fetcher. The codes are present. We only need to configure it.<br/>
+        <p class="text-center font" style="font-size:60px;">Problems we meet (Nutch)</p>
+        <p class="content-view ">Detect and Add New Webpages<br/>
+		We use a scheduled webpage fetcher. If a webpages changes regularly, the fetcher will also adapt to its periodicity. <br/>
 		<p class="code" style="font-size: 20px;">&lt;property&gt;
 &lt;name&gt;db.fetch.schedule.class&lt;/name&gt;
 &lt;value&gt;org.apache.nutch.crawl.AdaptiveFetchSchedule&lt;/value&gt;
@@ -121,10 +123,10 @@
 .....<br/>
 db.fetch.schedule.adaptive.dec_rate (=0.2)<br/>
 db.fetch.schedule.adaptive.inc_rate (=0.4)<br/>
-</p>
+		</p>
 		</p>
     </div>
-    <div id="tech_content3" class="step" data-x="50000" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
+     <div id="tech_content3" class="step" data-x="50000" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
         <p class="text-center" style="font-size:60px;">Problems we meet (Solr)</p>
         <p class="content-view font">Chinese Character Tokenizing<br/>
 		We employed IKAnalyzer.
@@ -139,7 +141,20 @@ db.fetch.schedule.adaptive.inc_rate (=0.4)<br/>
 		We write a script to send all fetched segments from Nutch to Solr to rebuild the index.
 		</p>
     </div>
-	
+     <div id="tech_content13" class="step" data-x="150000" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
+        <p class="text-center" style="font-size:60px;">Cold Setup :-( </p>
+        <p>Problem: not users' historical records for CF (Collaborative Filtering) </p>
+        <p>Solution: Content-based Approach. NLP techniques apply :) </p>
+    </div>
+    <div id="tech_content14" class="step" data-x="200000" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
+        <p class="text-center" style="font-size:60px;">Sparse & High dimensional :( </p>
+        <p>Feature vectors has reeeeeeeeealy high dimension, over 250, 000 dimension, yet in average less than 200 not zero features in our case. </p>
+    </div>                 
+    <div id="tech_content15" class="step" data-x="250000" data-y="79500" data-z="0" data-rotate="0" data-scale="20">
+        <p class="text-center" style="font-size:60px;"> Large Scale </p>
+        <p>Problem: slooooooooooow to traverse whole database</p>
+        <p>Solution: create multi-level index, implemented by Fortran. </p>
+    </div>   	
     <div id="frontend" class="step animar" data-x="19000" data-y="83000" data-z="0" data-rotate="30" data-scale="15">
         <p class="font tech-size">Technology Employed <span class="salmon"><i class="icon-desktop"></i></span></p>
         <ul class="text-center ">
@@ -186,69 +201,72 @@ db.fetch.schedule.adaptive.inc_rate (=0.4)<br/>
         </ul>
     </div>    
 
-    <!------------------------------- SERVICES -------------------------------------------->
+    <!------------------------------- SERVICES(Changed to Algorithms) -------------------------------------------->
 
 
     <div id="services" class="step" data-x="-10000" data-y="140000" data-z="0" data-rotate="0" data-scale="400">
-        <p class="font font-x2"><span class="salmon">{</span>#<span class="salmon">}</span><span class="font title">(剩下的是模板里面的内容)</span></p>
+        <p class="font font-x2"><span class="salmon">{</span>#<span class="salmon">}</span><span class="font title">Algorithms</span></p>
     </div> 
 
-    <div id="services_one" class="step" data-x="-160000" data-y="141000" data-z="0" data-rotate="-90" data-scale="40">
-        <p class="font text-center font-x1 scaleZero">Software Factory</p>
-    </div>
+ 
 
     <div id="services_tags" class="step" data-x="-160000" data-y="141000" data-z="2000" data-rotate-x="-90" data-rotate-y="90" data-rotate-z="0" data-scale="12">
         <p class="text-center upLine"><span class="salmon"><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i></span></p>
-        <p class="text-center font scaleZero">Analisis<br />
-        Design<br />
-        Development<br />
-        Testing<br />
-        QA<br />
-        IT Consulting<p/>
+        <p class="text-center font scaleZero">Full-Text Search<br />
+        Vector Space Model<br />
+        Gaussian Mixture Model<br />
+        K-means<br />
+        Collaborative Filter<br />
+        ...<p/>
         <p class="text-center downLine"><span class="salmon"><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i></span></p>
     </div>
 
-    <!------------------------------- SUCCESS -------------------------------------------->
-
-    <div id="success" class="step" data-x="89000" data-y="145000" data-z="0" data-rotate="-90" data-rotate-y="80" data-scale="40">
-        <p class="font font-x1"><span class="salmon">{</span>#<span class="salmon">}</span><span class="font title">Success Stories</span></p>
+    <div id="algorithm1" class="step" data-x="00000" data-y="145000" data-z="4000" data-rotate="-90" data-rotate-y="80" data-scale="40">
+        <p class="text-center" style="font-size:60px;">Full-Text Search</p>
+        <p>Tokenizing</p>
+        <p>Inverted Index</p>
+        <p>Score func: boost*coord*similarity</p>
     </div>
 
-    <div id="success_map" class="step" data-x="78000" data-y="148000" data-z="0" data-rotate-x="0" data-rotate-y="170" data-rotate-z="-90" data-scale="30">
-        <div class="map_bg">
-                <div class="clients-logos img-circle california">
-                    <img src="img/hirolabs.png" />
-                    <span>California</span>
-                </div>
-                <div class="clients-logos img-circle atlanta">
-                    <img src="img/bandofcoders.png" />
-                    <span>Atlanta</span>
-                </div>                
-                <div class="clients-logos img-circle baires">
-                    <img src="img/a4bandas.png" />
-                    <span>Buenos Aires</span>
-                </div>                
-                <div class="clients-logos img-circle tcm">
-                    <img src="img/lagaceta.png" />
-                    <span>Tucumán</span>
-                </div>
-                <div class="clients-logos img-circle baires2">
-                    <img src="img/asante.png" />
-                    <span>Buenos Aires</span>
-                </div>
-                <div class="clients-logos img-circle spain">
-                    <img src="img/mckinsey.png" />
-                    <span>España</span>
-                </div>            
-        </div>
+    <div id="recommender1" class="step" data-x="320000" data-y="140000" data-z="8000" data-rotate="-90" data-rotate-y="80" data-scale="40">
+        <p class="text-center" style="font-size:60px;"> Recommender <i class="icon-filter"></i> </p>
+        <p class="text-center"> 1. Content-Based Method </p>
+        <p class="text-center"> 2. Memory-Based Method </p>
+    </div>    
 
-    </div>
+    <div id="recommender2" class="step" data-x="320000" data-y="280000" data-z="10000" data-rotate="90" data-rotate-y="80" data-scale="40">
+        <p class="text-center" style="font-size:60px;">
+        1. Content-Based Method <i class="icon-book"></i>
+        </p>
+        <p class="text-center" style="font-size:40px;">
+        deal with cold setup problems
+        </p>
+        
+        <p> 1.1 Text Feature Extraction </p>
+        <p style="font-size:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.1 VSM (Vector Space Model)</p>
+        <p style="font-size:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.2 LDA (Latent Dirichlet Allocation)</p>
+        <p style="font-size:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.3 GMM (Gaussian Mixture Model)</p>
+
+        <p> 1.2 K-means </p>
+        <p style="font-size:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1 multi-level index</p>
+    </div>  
+
+    <div id="recommender3" class="step" data-x="320000" data-y="420000" data-z="12000" data-rotate="90" data-rotate-y="80" data-scale="40">
+        <p class="text-center" style="font-size:60px;">
+        2. Memory-Based Method (Collaborative Filter) <i class="icon-archive"></i>
+        </p>
+        <p class="text-center" style="font-size:40px;">
+        when we have certain amount of users and their behavior records
+        </p>
+        <p> 2.1 User-Based Method</p>
+        <p> 2.2 Item-Based Method</p>
+    </div>           
 
     <div id="slogan-finish" class="step finish" data-x="82000" data-y="145000" data-z="" data-rotate="1000" data-scale="1">
-        <p class="font logo"><span class="salmon">{</span>hash<span class="salmon">d</span>og<span class="salmon">}</span></p>
+        <p class="font logo"><span class="salmon">{</span>CSE<span class="salmon">}</span></p>
         <div class="drop_box">
-            <span class="font font-x0 slogan_finish img-routed">Creative<span class="dark">.</span>Simple</span>            
-            <span id="drop_down" class="font font-x0 slogan_finish img-routed">Software<span class="dark">.</span>Factory</span>
+            <span class="font font-x0 slogan_finish img-routed">Hack<span class="dark">.</span>Data</span>            
+            <span id="drop_down" class="font font-x0 slogan_finish img-routed"> For<span class="dark">.</span>Fun !</span>
         </div>
     </div>
 
@@ -266,8 +284,7 @@ db.fetch.schedule.adaptive.inc_rate (=0.4)<br/>
         <li><a href="#what" class="font">About <i class="icon-code"></i></a></li>
         <li><a href="#how" class="font">Features <i class="icon-sitemap"></i></a></li>
         <li><a href="#tech" class="font">Challenges <i class="icon-cogs"></i></a></li>
-        <li><a href="#services" class="font">Services <i class="icon-beaker"></i></a></li>
-        <li><a href="#success" class="font">Succes Stories <i class="icon-star"></i></a></li>
+        <li><a href="#services" class="font">Algorithms <i class="icon-beaker"></i></a></li>
     </ul>  
 </div>  
 <button id="next"><span class="next"><i class="icon-double-angle-right"></i></span></button> 
